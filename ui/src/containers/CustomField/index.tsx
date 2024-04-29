@@ -45,6 +45,7 @@ const CustomField: React.FC = function () {
 
   // save data of "selectedAssets" state in contentstack when updated
   React.useEffect(() => {
+    alert('in custom field');
     if (selectedAssets) {
       setRenderAssets(rootConfig?.filterAssetData?.(selectedAssets));
       setSelectedAssetIds(selectedAssets?.map((item) => item?.[uniqueID]));
@@ -64,6 +65,7 @@ const CustomField: React.FC = function () {
 
       if (assetLimit && finalAssets?.length > assetLimit) {
         finalAssets = finalAssets?.slice(0, assetLimit);
+        alert("1");
         Notification({
           displayContent: {
             error: {

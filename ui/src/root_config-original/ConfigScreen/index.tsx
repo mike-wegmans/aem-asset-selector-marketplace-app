@@ -31,11 +31,27 @@ const configureConfigScreen = () =>
 
 const customWholeJson = () => {
   const customJsonOptions: string[] = [
-    "repo:assetId",
-    "_links",
+    "public_id",
+    "resource_type",
+    "secure_url",
+    "type",
+    "format",
+    "version",
+    "url",
+    "width",
+    "height",
+    "bytes",
+    "duration",
+    "tags",
+    "metadata",
+    "created_at",
+    "access_mode",
+    "access_control",
+    "created_by",
+    "uploaded_by",
   ];
 
-  const defaultFeilds: string[] = ["assetId", "_links"];
+  const defaultFeilds: string[] = ["public_id", "resource_type", "secure_url"];
 
   return {
     customJsonOptions,

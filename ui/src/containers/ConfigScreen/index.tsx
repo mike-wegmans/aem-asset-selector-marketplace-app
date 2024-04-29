@@ -21,6 +21,9 @@ import "./styles.scss";
 import { TypeCustomConfigUpdateParams } from "../../common/types";
 
 const ConfigScreen: React.FC = function () {
+  /* eslint-disable no-console */
+  console.log("test");
+
   const { appFailed } = useContext(MarketplaceAppContext);
   // context usage for global states thorughout the component
   const { installationData, setInstallationData, checkConfigFields } =
