@@ -31,3 +31,5 @@ ui/.env
 ui/.npmrc
 coverage/
 .talismanrc
+key.pem
+cert.pem
