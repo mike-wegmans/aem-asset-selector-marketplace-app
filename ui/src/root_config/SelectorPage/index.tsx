@@ -25,15 +25,16 @@ const openComptactView = (
 ) => {
   /* Implement your DAM compact view implementation here
   declare your selected DAM variable in the above scope and call the open function from DAM compact view on that variable
-  use onSuccess function to send your data to custom field [onSuccess accepts an array of asset objects]  */
+  use onSuccess function to send your data to custom field [onSuccess accepts an array
+     of asset objects]  */
   PureJSSelectors.registerAssetsSelectorsAuthService({
-    imsClientId: 'aemcs-wegmans-assetselector',
-    imsScope: 'AdobeID,openid,additional_info.projectedProductContext',
-    redirectUri: window.location.href,
-    env:"prod"
+    imsClientId: config?.imsClientId,
+    imsScope: config?.imsScope,
+    redirectUri:config?.imsRedirectUri,
+    env: config?.env
   });
   const props = {
-    imsOrg: "68B620B35350F1650A490D45@AdobeOrg",
+    imsOrg: config?.imsOrg,
     handleSelection: (assets:any[]) => {
 
     alert(JSON.stringify(assets));

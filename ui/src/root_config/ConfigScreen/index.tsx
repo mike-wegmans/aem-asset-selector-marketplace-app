@@ -9,21 +9,44 @@ const configureConfigScreen = () =>
   4. either saveInConfig or saveInServerConfig should be true for your field data to be saved in contentstack
   5. If values are stored in serverConfig then those values will not be available to other UI locations
   6. Supported type options are textInputFields, radioInputFields, selectInputFields */
-
   ({
-    cloudName: {
+    imsClientId: {
       type: "textInputFields",
-      labelText: "Cloud Name",
-      placeholderText: "Enter Cloud Name",
-      instructionText: `Enter your Cloudinary account's Cloud Name`,
+      labelText: "IMS Client ID",
+      placeholderText: "Enter IMS Client ID",
+      instructionText: "Enter the IMS Client ID provided by Adobe for your instance of AEM Assets as a Cloud Service",
       saveInConfig: true,
       saveInServerConfig: false,
     },
-    apiKey: {
+    imsScope: {
       type: "textInputFields",
-      labelText: "API Key",
-      placeholderText: "Enter API Key",
-      instructionText: `Enter your Cloudinary account's API Key`,
+      labelText: "IMS Scope",
+      placeholderText: "Enter IMS Scope",
+      instructionText: "Enter the IMS Scope provided by Adobe for your instance of AEM Assets as a Cloud Service",
+      saveInConfig: true,
+      saveInServerConfig: false,
+    },
+    redirectUri: {
+      type: "textInputFields",
+      labelText: "Redirect URI",
+      placeholderText: "Enter Redirect URI",
+      instructionText: "Enter the Redirect URI provided by Adobe for your instance of AEM Assets as a Cloud Service",
+      saveInConfig: true,
+      saveInServerConfig: false,
+    },
+    env: {
+      type: "textInputFields",
+      labelText: "Environment",
+      placeholderText: "Enter Environment",
+      instructionText: "Enter Adobe Identity environment - staging or prod",
+      saveInConfig: true,
+      saveInServerConfig: false,
+    },
+    imsOrg: {
+      type: "textInputFields",
+      labelText: "IMS Org",
+      placeholderText: "Enter IMS Org",
+      instructionText: "Enter Adobe IMS Organization ID",
       saveInConfig: true,
       saveInServerConfig: false,
     },
@@ -35,7 +58,7 @@ const customWholeJson = () => {
     "_links",
   ];
 
-  const defaultFeilds: string[] = ["assetId", "_links"];
+  const defaultFeilds: string[] = ["repo:assetId", "_links"];
 
   return {
     customJsonOptions,
