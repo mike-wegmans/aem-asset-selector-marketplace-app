@@ -23,10 +23,11 @@ node_modules/
 .vercel
 .eslintcache
 
+#.env
 .npmrc
 .dccache
 api/.env
-ui/.env
+#ui/.env
 ui/.npmrc
 coverage/
 .talismanrc
