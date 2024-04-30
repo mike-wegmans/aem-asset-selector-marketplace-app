@@ -7,8 +7,7 @@ import { TypeAsset, TypeRootCustomField } from "../../common/types";
 const filterAssetData = (assets: any[]) => {
   const filterAssetArray: TypeAsset[] = assets?.map((asset) => {
     // Enter your code for filteration of assets to the specified format
-    const { assetId, width, height, type, url, size, name } =
-      asset;
+    const { assetId, width, height, type, url, size, name } = asset;
     return {
       id: assetId,
       type,

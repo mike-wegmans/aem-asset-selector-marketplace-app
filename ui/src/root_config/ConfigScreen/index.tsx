@@ -14,7 +14,8 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "IMS Client ID",
       placeholderText: "Enter IMS Client ID",
-      instructionText: "Enter the IMS Client ID provided by Adobe for your instance of AEM Assets as a Cloud Service",
+      instructionText:
+        "Enter the IMS Client ID provided by Adobe for your instance of AEM Assets as a Cloud Service",
       saveInConfig: true,
       saveInServerConfig: false,
     },
@@ -22,7 +23,8 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "IMS Scope",
       placeholderText: "Enter IMS Scope",
-      instructionText: "Enter the IMS Scope provided by Adobe for your instance of AEM Assets as a Cloud Service",
+      instructionText:
+        "Enter the IMS Scope provided by Adobe for your instance of AEM Assets as a Cloud Service",
       saveInConfig: true,
       saveInServerConfig: false,
     },
@@ -30,7 +32,8 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "Redirect URI",
       placeholderText: "Enter Redirect URI",
-      instructionText: "Enter the Redirect URI provided by Adobe for your instance of AEM Assets as a Cloud Service",
+      instructionText:
+        "Enter the Redirect URI provided by Adobe for your instance of AEM Assets as a Cloud Service",
       saveInConfig: true,
       saveInServerConfig: false,
     },
@@ -53,10 +56,7 @@ const configureConfigScreen = () =>
   });
 
 const customWholeJson = () => {
-  const customJsonOptions: string[] = [
-    "repo:assetId",
-    "_links",
-  ];
+  const customJsonOptions: string[] = ["repo:assetId", "_links"];
 
   const defaultFeilds: string[] = ["repo:assetId", "_links"];
 

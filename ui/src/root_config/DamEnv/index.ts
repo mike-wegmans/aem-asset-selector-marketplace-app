@@ -6,9 +6,9 @@ const DamEnvVariables: TypeRootDamEnv = {
   DAM_APP_NAME: "Wegmans AEM Assets Connector",
   CONFIG_FIELDS: ["imsClientId", "imsScope", "redirectUri", "env", "imsOrg"],
   ASSET_UNIQUE_ID: "assetId",
-  DAM_SCRIPT_URL: "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js",
+  DAM_SCRIPT_URL:
+    "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js",
   SELECTOR_PAGE_LOGO: Logo,
   DIRECT_SELECTOR_PAGE: "novalue", // possible values "url", "window", default => "novalue"
 };
 export default DamEnvVariables;
-
