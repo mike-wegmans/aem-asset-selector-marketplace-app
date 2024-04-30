@@ -13,7 +13,7 @@ const configureConfigScreen = () =>
     imsClientId: {
       type: "textInputFields",
       labelText: "IMS Client ID",
-      placeholderText: "Enter IMS Client ID",
+      placeholderText: "Enter IMS ClientID",
       instructionText:
         "Enter the IMS Client ID provided by Adobe for your instance of AEM Assets as a Cloud Service",
       saveInConfig: true,
