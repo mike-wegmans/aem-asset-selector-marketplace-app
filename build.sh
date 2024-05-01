@@ -18,6 +18,6 @@ cd rte
 npm install
 npm run build
 cd ..
-zip -r ui.zip build/
-mv ui.zip ../to-deploy
-cd ..
+#zip -r ui.zip build/
+#mv ui.zip ../to-deploy
+#cd ..
