@@ -18,10 +18,6 @@ cd rte
 npm install
 npm run build
 cd ..
-cd build
-cd dist
-echo $(ls)
-cd ../..
 mv build ../build
 #zip -r ui.zip build/
 #mv ui.zip ../to-deploy
