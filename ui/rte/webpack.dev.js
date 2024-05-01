@@ -10,11 +10,11 @@ module.exports = merge(common, {
   watch: true,
   devServer: {
     static: path.join(__dirname, "../build/dist"),
-    // https: true,
+    https: true,
     port: 1268,
     compress: true,
     hot: false,
-    host: "localhost",
+    host: "localhost.wegmans.com",
     allowedHosts: "all",
     open: {
       target: `/${pkg.output}`,

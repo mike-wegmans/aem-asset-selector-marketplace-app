@@ -3,7 +3,7 @@ import { TypeRootDamEnv } from "../../common/types";
 
 const DamEnvVariables: TypeRootDamEnv = {
   IS_DAM_SCRIPT: true,
-  DAM_APP_NAME: "Wegmans AEM Assets Connector",
+  DAM_APP_NAME: "AEM Assets",
   CONFIG_FIELDS: ["imsClientId", "imsScope", "redirectUri", "env", "imsOrg"],
   ASSET_UNIQUE_ID: "assetId",
   DAM_SCRIPT_URL:

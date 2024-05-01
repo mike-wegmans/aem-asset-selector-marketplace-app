@@ -1,8 +1,8 @@
 import React from "react";
 
 const DamEnvVariables = {
-  DAM_APP_NAME: "DAM",
-  ASSET_NAME_PARAM: "name",
+  DAM_APP_NAME: "AEM Assets",
+  ASSET_NAME_PARAM: "assetId",
   RTE_DAM_ICON: (
     <svg
       width="20"

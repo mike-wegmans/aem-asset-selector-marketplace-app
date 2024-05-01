@@ -14,14 +14,17 @@ const NEWTAB_ICON = "NewTab";
 
 const getDisplayUrl = (asset: any) => {
   /* returns the display url of the asset. Return Type = "String" */
+  return asset?.url;
 };
 
 const getAssetType = (asset: any) => {
   /* possible return values ==> Document, Image, Pdf, Archive, Video, Audio */
+  return asset?.type;
 };
 
 const getViewIconforTooltip = (type: string) => {
   /* possible return values ==> Eye and NewTab */
+  return "NewTab";
 };
 
 const getSelectorWindowUrl = (config: any) => {
