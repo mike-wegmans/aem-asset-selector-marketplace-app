@@ -4,8 +4,8 @@
 set -e
 #The above command is to fail build if any one of the below build steps fail
 
-rm -rf to-deploy
-mkdir to-deploy
+#rm -rf to-deploy
+#mkdir to-deploy
 
 #UI Build
 cd ui
@@ -18,8 +18,10 @@ cd rte
 npm install
 npm run build
 cd ..
-echo $(pwd)
+cd build
+cd dist
 echo $(ls)
+cd ../..
 mv build ../build
 #zip -r ui.zip build/
 #mv ui.zip ../to-deploy
