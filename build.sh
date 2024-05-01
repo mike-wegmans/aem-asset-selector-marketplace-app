@@ -17,7 +17,9 @@ npm run build
 cd rte
 npm install
 npm run build
-cd ../..
+cd ..
+echo(pwd);
+echo(ls);
 #zip -r ui.zip build/
 #mv ui.zip ../to-deploy
 #cd ..
