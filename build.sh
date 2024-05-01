@@ -20,6 +20,7 @@ npm run build
 cd ..
 echo $(pwd)
 echo $(ls)
+mv build ../build
 #zip -r ui.zip build/
 #mv ui.zip ../to-deploy
 #cd ..
