@@ -24,7 +24,7 @@ const getAssetType = (asset: any) => {
 
 const getViewIconforTooltip = (type: string) => {
   /* possible return values ==> Eye and NewTab */
-  return "Eye";
+  return "NewTab";
 };
 
 const getSelectorWindowUrl = (config: any) => {
