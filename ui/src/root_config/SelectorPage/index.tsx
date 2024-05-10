@@ -19,8 +19,6 @@ const openComptactView = (
   config: any,
   selectedIds: string[],
   onSuccess: (assets: any[]) => void,
-  onCancel: () => void,
-  { containerRef, containerClass, containerId }: TypeSelectorContainer,
   setError: (errObj: TypeErrorFn) => void
 ) => {
   /* Implement your DAM compact view implementation here
@@ -62,6 +60,7 @@ const openComptactView = (
       ];
       onSuccess(formattedAssets);
     },
+    onClose: () => {},
   };
 
   window.CompactView = PureJSSelectors.renderAssetSelectorWithAuthFlow(
