@@ -62,7 +62,6 @@ const openComptactView = (
       ];
       onSuccess(formattedAssets);
     },
-    onClose: () => {},
   };
 
   window.CompactView = PureJSSelectors.renderAssetSelectorWithAuthFlow(
