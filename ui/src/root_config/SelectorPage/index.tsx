@@ -19,6 +19,8 @@ const openComptactView = (
   config: any,
   selectedIds: string[],
   onSuccess: (assets: any[]) => void,
+  onCancel: () => void,
+  { containerRef, containerClass, containerId }: TypeSelectorContainer,
   setError: (errObj: TypeErrorFn) => void
 ) => {
   /* Implement your DAM compact view implementation here
@@ -36,6 +38,7 @@ const openComptactView = (
     handleSelection: (assets: any[]) => {
       /* eslint-disable no-console */
       console.log(JSON.stringify(assets));
+      alert(JSON.stringify(assets));
 
       const formattedAssets = [
         {
