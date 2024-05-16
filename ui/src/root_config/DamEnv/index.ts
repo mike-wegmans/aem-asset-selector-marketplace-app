@@ -1,4 +1,4 @@
-import Logo from "../../common/asset/WegmansLogo.min.svg";
+import Logo from "../../common/asset/wegmans-logo.webp";
 import { TypeRootDamEnv } from "../../common/types";
 
 const DamEnvVariables: TypeRootDamEnv = {
