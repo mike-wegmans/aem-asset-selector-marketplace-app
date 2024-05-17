@@ -35,6 +35,7 @@ const openComptactView = (
   });
   const props = {
     imsOrg: config?.imsOrg,
+    repositoryId: "wegmans-enterprise-assets-aemaacs-dev",
     handleSelection: (assets: any[]) => {
       /* eslint-disable no-console */
       console.log(JSON.stringify(assets));
