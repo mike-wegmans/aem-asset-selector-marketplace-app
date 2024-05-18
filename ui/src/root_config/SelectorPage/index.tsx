@@ -35,6 +35,7 @@ const openComptactView = (
   });
   const props = {
     imsOrg: config?.imsOrg,
+    repositoryId: "author-p131626-e1282650.adobeaemcloud.com",
     handleSelection: (assets: any[]) => {
       /* eslint-disable no-console */
       console.log(JSON.stringify(assets));
