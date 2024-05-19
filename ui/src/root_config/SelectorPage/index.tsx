@@ -51,13 +51,11 @@ const openComptactView = (
             console.log(asset.name);
             const formattedAssets = [
               {
-                assetId: assets[0]["repo:assetId"],
-                width:
-                  rendition.width,
-                height:
-                rendition.height,
+                assetId: asset?.["repo:assetId"],
+                width: rendition.width,
+                height: rendition.height,
                 type: "image",
-                url: rendition.href,
+                url: "https://author-p131626-e1282650.adobeaemcloud.com/is/image/wegmanscsdev/RECIPE_9903",
                 size: asset?.["repo:size"],
                 name: asset.name,
               },
