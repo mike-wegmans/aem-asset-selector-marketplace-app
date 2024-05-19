@@ -55,7 +55,7 @@ const openComptactView = (
                 width: rendition.width,
                 height: rendition.height,
                 type: "image",
-                url: "https://s7d7.scene7.com/is/image/wegmanscsdev/RECIPE_9903",
+                url: rendition.href.replace("author-p131626-e1282650.adobeaemcloud.com", "s7d7.scene7.com"),
                 size: asset?.["repo:size"],
                 name: asset.name,
               },
