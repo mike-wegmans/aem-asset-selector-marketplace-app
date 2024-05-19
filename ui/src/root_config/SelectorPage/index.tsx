@@ -40,11 +40,11 @@ const openComptactView = (
       /* eslint-disable no-console */
       console.log(JSON.stringify(assets));
       alert(JSON.stringify(assets));
-
+      let formattedAssets = [];
       assets.forEach((asset) => {
         console.log(asset._links?.["aem:renditionUsage"]);
         if (asset._links?.["aem:renditionUsage"] === "dynamic_media_preset") {
-          const formattedAssets = [
+           formattedAssets = [
             {
               assetId: assets[0]["repo:assetId"],
               width:
@@ -62,10 +62,11 @@ const openComptactView = (
             },
           ];
           onSuccess(formattedAssets);
-        } else {
-          alert("No Dynamic Media Preset Found");
         }
       });
+      if (formattedAssets.length == 0) {
+        alert("No Dynamic Media Preset Found");
+      }
     },
     onClose: () => {},
   };
