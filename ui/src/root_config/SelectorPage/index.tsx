@@ -42,7 +42,7 @@ const openComptactView = (
       alert(JSON.stringify(assets));
       //let formattedAssets = [];
       assets.forEach((asset) => {
-        console.log(asset["aem:renditionUsage"]);
+        console.log(asset?.["aem:renditionUsage"]);
         if (asset["aem:renditionUsage"] === "dynamic_media_preset") {
            const formattedAssets = [
             {
@@ -61,6 +61,7 @@ const openComptactView = (
               ][0]["dc:title"],
             },
           ];
+          alert("success");
           onSuccess(formattedAssets);
         }
       });
