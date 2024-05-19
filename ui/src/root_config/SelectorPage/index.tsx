@@ -41,28 +41,30 @@ const openComptactView = (
       console.log(JSON.stringify(assets));
       alert(JSON.stringify(assets));
 
-      const formattedAssets = [
-        {
-          assetId: assets[0]["repo:assetId"],
-          width:
-            assets[0]._links?.[
-              "http://ns.adobe.com/adobecloud/rel/rendition"
-            ][0].width,
-          height:
-            assets[0]._links?.[
-              "http://ns.adobe.com/adobecloud/rel/rendition"
-            ][0].height,
-          type: "image",
-          url: "https://image-server.unataops.com/image-server/fit-in/400x400/filters:quality(80)/https://d2d8wwwkmhfcva.cloudfront.net/800x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_19c156e1-a1bb-4de4-b0be-f53f60692b81.jpg",
-          size: assets[0]._links?.[
-            "http://ns.adobe.com/adobecloud/rel/rendition"
-          ][0]["repo:size"],
-          name: assets[0]._links?.[
-            "http://ns.adobe.com/adobecloud/rel/rendition"
-          ][0]["dc:title"],
-        },
-      ];
-      onSuccess(formattedAssets);
+      assets.forEach((asset) => {
+        if (asset._links?.["aem:renditionUsage"] == "dynamic_media_preset") {
+          const formattedAssets = [
+            {
+              assetId: assets[0]["repo:assetId"],
+              width:
+                asset.width,
+              height:
+                asset.height,
+              type: "image",
+              url: asset.href,
+              size: assets[0]._links?.[
+                "http://ns.adobe.com/adobecloud/rel/rendition"
+              ][0]["repo:size"],
+              name: assets[0]._links?.[
+                "http://ns.adobe.com/adobecloud/rel/rendition"
+              ][0]["dc:title"],
+            },
+          ];
+          onSuccess(formattedAssets);
+        } else {
+          alert("No Dynamic Media Preset Found");
+        }
+      });
     },
     onClose: () => {},
   };
