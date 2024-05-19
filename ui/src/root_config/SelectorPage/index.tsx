@@ -42,7 +42,7 @@ const openComptactView = (
       alert(JSON.stringify(assets));
 
       assets.forEach((asset) => {
-        if (asset._links?.["aem:renditionUsage"] == "dynamic_media_preset") {
+        if (asset._links?.["aem:renditionUsage"] === "dynamic_media_preset") {
           const formattedAssets = [
             {
               assetId: assets[0]["repo:assetId"],
