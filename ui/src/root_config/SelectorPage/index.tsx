@@ -64,7 +64,7 @@ const openComptactView = (
           onSuccess(formattedAssets);
         }
       });
-      if (formattedAssets.length == 0) {
+      if (formattedAssets.length = 0) {
         alert("No Dynamic Media Preset Found");
       }
     },
