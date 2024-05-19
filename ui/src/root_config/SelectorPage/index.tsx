@@ -43,22 +43,23 @@ const openComptactView = (
       assets.forEach((asset) => {
         asset.computedMetadata._links?.["http://ns.adobe.com/adobecloud/rel/rendition"].forEach((rendition: any) => {
           if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset") {
-            console.log("found DM Asset");
+            console.log(assets[0]["repo:assetId"]);
+            console.log(rendition.width);
+            console.log(rendition.height);
+            console.log(rendition.href);
+            console.log(asset?.["repo:size"]);
+            console.log(asset.name);
             const formattedAssets = [
               {
                 assetId: assets[0]["repo:assetId"],
                 width:
-                  asset.width,
+                  rendition.width,
                 height:
-                  asset.height,
+                rendition.height,
                 type: "image",
-                url: asset.href,
-                size: assets[0]._links?.[
-                  "http://ns.adobe.com/adobecloud/rel/rendition"
-                ][0]["repo:size"],
-                name: assets[0]._links?.[
-                  "http://ns.adobe.com/adobecloud/rel/rendition"
-                ][0]["dc:title"],
+                url: rendition.href,
+                size: asset?.["repo:size"],
+                name: asset.name,
               },
             ];
             alert("success");
