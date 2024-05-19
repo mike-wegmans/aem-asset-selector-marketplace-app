@@ -42,8 +42,8 @@ const openComptactView = (
       alert(JSON.stringify(assets));
       //let formattedAssets = [];
       assets.forEach((asset) => {
-        console.log(asset._links?.["aem:renditionUsage"]);
-        if (asset._links?.["aem:renditionUsage"] === "dynamic_media_preset") {
+        console.log(asset["aem:renditionUsage"]);
+        if (asset.["aem:renditionUsage"] === "dynamic_media_preset") {
            const formattedAssets = [
             {
               assetId: assets[0]["repo:assetId"],
