@@ -43,7 +43,7 @@ const openComptactView = (
       //let formattedAssets = [];
       assets.forEach((asset) => {
         console.log(asset["aem:renditionUsage"]);
-        if (asset.["aem:renditionUsage"] === "dynamic_media_preset") {
+        if (asset["aem:renditionUsage"] === "dynamic_media_preset") {
            const formattedAssets = [
             {
               assetId: assets[0]["repo:assetId"],
