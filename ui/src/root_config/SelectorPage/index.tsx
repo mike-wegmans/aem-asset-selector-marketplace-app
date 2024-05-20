@@ -61,7 +61,7 @@ const openComptactView = (
               },
             ];
             if ("_links" in rendition) {
-              fetch(rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"].href).then(res => res.json()).then(out =>
+              fetch("https://author-p131626-e1282650.adobeaemcloud.com/adobe/repository/content/dam/wegmans/marketing/assets/products/recipes/web_recipes/RECIPE_13362.jpg;api=block_download;renditionName=cq5dam.web.1280.1280.jpeg;version=oak%3A1.0%3A%3Aci%3Aff0bd018623b3ac9fbd87c90fe866e84;t=1716").then(res => res.json()).then(out =>
                 console.log('Checkout this JSON! ', out))
                 .catch(err => { console.log(err)});
               alert("success");
