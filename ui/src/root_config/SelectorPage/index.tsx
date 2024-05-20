@@ -76,7 +76,6 @@ const openComptactView = (
                   console.log(`Error: ${xhr.status}`);
                 }
               };
-              alert("success 2");
 
               //onSuccess(formattedAssets);
             } else {
