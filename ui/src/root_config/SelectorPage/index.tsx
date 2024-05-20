@@ -61,7 +61,7 @@ const openComptactView = (
               },
             ];
             if ("_links" in rendition) {
-              fetch(rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"]).then(res => res.json()).then(out =>
+              fetch(rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"].href).then(res => res.json()).then(out =>
                 console.log('Checkout this JSON! ', out))
                 .catch(err => { throw err });
               alert("success");
