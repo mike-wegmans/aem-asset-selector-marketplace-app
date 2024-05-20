@@ -184,7 +184,6 @@ const SelectorPage: React.FC<any> = function () {
             )}
           </>
         )}
-        test
       </div>
     </div>
   );
