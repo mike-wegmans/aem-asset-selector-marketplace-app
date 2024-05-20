@@ -42,7 +42,9 @@ const openComptactView = (
       alert(JSON.stringify(assets));
       assets.forEach((asset) => {
         asset.computedMetadata._links?.["http://ns.adobe.com/adobecloud/rel/rendition"].forEach((rendition: any) => {
-          if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset") {
+          if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset"
+            && "_links" in rendition
+            && "http://ns.adobe.com/adobecloud/rel/download" in rendition._links) {
             console.log(asset?.["repo:assetId"]);
             console.log(rendition.width);
             console.log(rendition.height);
@@ -60,12 +62,10 @@ const openComptactView = (
                 name: asset.name,
               },
             ];
-            if ("_links" in rendition && "http://ns.adobe.com/adobecloud/rel/download" in rendition._links) {
-              alert("success");
-              onSuccess(formattedAssets);
-            } else {
-              alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
-            }
+            alert("success");
+            onSuccess(formattedAssets);
+          } else {
+            alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
           }
         });
       });
