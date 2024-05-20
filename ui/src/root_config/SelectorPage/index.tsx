@@ -66,6 +66,7 @@ const openComptactView = (
               onSuccess(formattedAssets);
             } else {
               alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
+              setError;
             }
           }
         });
