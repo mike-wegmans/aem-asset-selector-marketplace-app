@@ -60,7 +60,7 @@ const openComptactView = (
                 name: asset.name,
               },
             ];
-            if ("_links" in rendition && rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"].length > 0) {
+            if ("_links" in rendition && "http://ns.adobe.com/adobecloud/rel/download" in rendition._links) {
               alert("success");
               onSuccess(formattedAssets);
             } else {
