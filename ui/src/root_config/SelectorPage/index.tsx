@@ -42,30 +42,31 @@ const openComptactView = (
       alert(JSON.stringify(assets));
       assets.forEach((asset) => {
         asset._links?.["http://ns.adobe.com/adobecloud/rel/rendition"].forEach((rendition: any) => {
-          if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset"
-            && "_links" in rendition
-            && "http://ns.adobe.com/adobecloud/rel/download" in rendition._links) {
-            console.log(asset?.["repo:assetId"]);
-            console.log(rendition.width);
-            console.log(rendition.height);
-            console.log(rendition.href);
-            console.log(asset?.["repo:size"]);
-            console.log(asset.name);
-            const formattedAssets = [
-              {
-                assetId: asset?.["repo:assetId"],
-                width: rendition.width,
-                height: rendition.height,
-                type: "image",
-                url: rendition.href.replace("author-p131626-e1282650.adobeaemcloud.com", "s7d7.scene7.com"),
-                size: asset?.["repo:size"],
-                name: asset.name,
-              },
-            ];
-            alert("success");
-            onSuccess(formattedAssets);
-          } else {
-            alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
+          if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset") {
+            if ("_links" in rendition
+              && "http://ns.adobe.com/adobecloud/rel/download" in rendition._links) {
+              console.log(asset?.["repo:assetId"]);
+              console.log(rendition.width);
+              console.log(rendition.height);
+              console.log(rendition.href);
+              console.log(asset?.["repo:size"]);
+              console.log(asset.name);
+              const formattedAssets = [
+                {
+                  assetId: asset?.["repo:assetId"],
+                  width: rendition.width,
+                  height: rendition.height,
+                  type: "image",
+                  url: rendition.href.replace("author-p131626-e1282650.adobeaemcloud.com", "s7d7.scene7.com"),
+                  size: asset?.["repo:size"],
+                  name: asset.name,
+                },
+              ];
+              alert("success");
+              onSuccess(formattedAssets);
+            } else {
+              alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
+            }
           }
         });
       });
