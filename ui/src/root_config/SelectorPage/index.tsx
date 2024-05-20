@@ -65,7 +65,7 @@ const openComptactView = (
                 console.log('Checkout this JSON! ', out))
                 .catch(err => { console.log(err)});
               alert("success");
-              onSuccess(formattedAssets);
+              //onSuccess(formattedAssets);
             } else {
               alert("no dynamic media URL set");
             }
