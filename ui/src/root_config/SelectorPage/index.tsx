@@ -66,7 +66,7 @@ const openComptactView = (
                 .catch(err => { console.log(err)});
               alert("success");
               const xhr = new XMLHttpRequest();
-              xhr.open("GET", ("https://author-p131626-e1282650.adobeaemcloud.com/adobe/repository/content/dam/wegmans/marketing/assets/products/recipes/web_recipes/RECIPE_13362.jpg;api=block_download;renditionName=cq5dam.web.1280.1280.jpeg;version=oak%3A1.0%3A%3Aci%3Aff0bd018623b3ac9fbd87c90fe866e84;t=1716");
+              xhr.open("GET", ("https://author-p131626-e1282650.adobeaemcloud.com/adobe/repository/content/dam/wegmans/marketing/assets/products/recipes/web_recipes/RECIPE_13362.jpg;api=block_download;renditionName=cq5dam.web.1280.1280.jpeg;version=oak%3A1.0%3A%3Aci%3Aff0bd018623b3ac9fbd87c90fe866e84;t=1716"));
               xhr.send();
               xhr.responseType = "json";
               xhr.onload = () => {
