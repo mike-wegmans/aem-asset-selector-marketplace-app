@@ -43,15 +43,12 @@ const openComptactView = (
       assets.forEach((asset) => {
         asset.computedMetadata._links?.["http://ns.adobe.com/adobecloud/rel/rendition"].forEach((rendition: any) => {
           if (rendition?.["aem:renditionUsage"] === "dynamic_media_preset") {
-            console.log(assets[0]["repo:assetId"]);
+            console.log(asset?.["repo:assetId"]);
             console.log(rendition.width);
             console.log(rendition.height);
             console.log(rendition.href);
             console.log(asset?.["repo:size"]);
             console.log(asset.name);
-            fetch("").then(res => res.json()).then(out =>
-              console.log('Checkout this JSON! ', out))
-              .catch(err => { throw err });
             const formattedAssets = [
               {
                 assetId: asset?.["repo:assetId"],
@@ -64,6 +61,9 @@ const openComptactView = (
               },
             ];
             if ("_links" in rendition) {
+              fetch(rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"]).then(res => res.json()).then(out =>
+                console.log('Checkout this JSON! ', out))
+                .catch(err => { throw err });
               alert("success");
               onSuccess(formattedAssets);
             } else {
