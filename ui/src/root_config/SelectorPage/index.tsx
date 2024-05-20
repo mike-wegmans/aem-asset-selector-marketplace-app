@@ -49,6 +49,9 @@ const openComptactView = (
             console.log(rendition.href);
             console.log(asset?.["repo:size"]);
             console.log(asset.name);
+            fetch("").then(res => res.json()).then(out =>
+              console.log('Checkout this JSON! ', out))
+              .catch(err => { throw err });
             const formattedAssets = [
               {
                 assetId: asset?.["repo:assetId"],
@@ -60,8 +63,12 @@ const openComptactView = (
                 name: asset.name,
               },
             ];
-            alert("success");
-            onSuccess(formattedAssets);
+            if ("_links" in rendition) {
+              alert("success");
+              onSuccess(formattedAssets);
+            } else {
+              alert("no dynamic media URL set");
+            }
           }
         });
       });
