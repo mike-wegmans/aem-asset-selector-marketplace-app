@@ -60,27 +60,11 @@ const openComptactView = (
                 name: asset.name,
               },
             ];
-            if ("_links" in rendition) {
-              fetch("https://author-p131626-e1282650.adobeaemcloud.com/adobe/repository/content/dam/wegmans/marketing/assets/products/recipes/web_recipes/RECIPE_13362.jpg;api=block_download;renditionName=cq5dam.web.1280.1280.jpeg;version=oak%3A1.0%3A%3Aci%3Aff0bd018623b3ac9fbd87c90fe866e84;t=1716").then(res => res.json()).then(out =>
-                console.log('Checkout this JSON! ', out))
-                .catch(err => { console.log(err)});
+            if ("_links" in rendition && rendition._links?.["http://ns.adobe.com/adobecloud/rel/download"].length > 0) {
               alert("success");
-              const xhr = new XMLHttpRequest();
-              xhr.open("GET", ("https://author-p131626-e1282650.adobeaemcloud.com/adobe/repository/content/dam/wegmans/marketing/assets/products/recipes/web_recipes/RECIPE_13362.jpg;api=block_download;renditionName=cq5dam.web.1280.1280.jpeg;version=oak%3A1.0%3A%3Aci%3Aff0bd018623b3ac9fbd87c90fe866e84;t=1716"));
-              xhr.send();
-              xhr.responseType = "json";
-              xhr.onload = () => {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                  console.log(xhr.response);
-                } else {
-                  console.log(`Error: ${xhr.status}`);
-                }
-              };
-              alert("success 2");
-
-              //onSuccess(formattedAssets);
+              onSuccess(formattedAssets);
             } else {
-              alert("no dynamic media URL set");
+              alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
             }
           }
         });
