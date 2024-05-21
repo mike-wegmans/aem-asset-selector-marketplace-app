@@ -35,7 +35,7 @@ const openComptactView = (
   });
   const props = {
     imsOrg: config?.imsOrg,
-    repositoryId: "author-p131626-e1282650.adobeaemcloud.com",
+    repositoryId: config?.aemAuthorDomain,
     handleSelection: (assets: any[]) => {
       /* eslint-disable no-console */
       console.log(JSON.stringify(assets));
@@ -57,7 +57,7 @@ const openComptactView = (
                   width: rendition.width,
                   height: rendition.height,
                   type: "image",
-                  url: rendition.href.replace("author-p131626-e1282650.adobeaemcloud.com", "s7d7.scene7.com"),
+                  url: rendition.href.replace(config?.aemAuthorDomain, config?.dynamicMediaDomain),
                   size: asset?.["repo:size"],
                   name: asset.name,
                 },
@@ -66,7 +66,6 @@ const openComptactView = (
               onSuccess(formattedAssets);
             } else {
               alert("This asset has not been configured with Dynamic Media.  Please validate in AEM Assets.");
-              setError;
             }
           }
         });

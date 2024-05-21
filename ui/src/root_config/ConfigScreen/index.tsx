@@ -47,9 +47,25 @@ const configureConfigScreen = () =>
     },
     imsOrg: {
       type: "textInputFields",
-      labelText: "IMS Org",
+      labelText: "IMS Org",.
       placeholderText: "Enter IMS Org",
       instructionText: "Enter Adobe IMS Organization ID",
+      saveInConfig: true,
+      saveInServerConfig: false,
+    },
+    aemAuthorDomain: {
+      type: "textInputFields",
+      labelText: "AEM Author Domain",
+      placeholderText: "Enter AEM Author Domain",
+      instructionText: "Enter the AEM Author domain for the authoring ennvionment you would to connect to",
+      saveInConfig: true,
+      saveInServerConfig: false,
+    },
+    dynamicMediaDomain: {
+      type: "textInputFields",
+      labelText: "Dynamic Media Domain",
+      placeholderText: "Enter Dynamic Media Domain",
+      instructionText: "Enter the Dynamic Media Domain for the Dynamic Media environment assoicated with the AEM Author you are connecting to.",
       saveInConfig: true,
       saveInServerConfig: false,
     },
