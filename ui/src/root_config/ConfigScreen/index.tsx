@@ -47,7 +47,7 @@ const configureConfigScreen = () =>
     },
     imsOrg: {
       type: "textInputFields",
-      labelText: "IMS Org",.
+      labelText: "IMS Org",
       placeholderText: "Enter IMS Org",
       instructionText: "Enter Adobe IMS Organization ID",
       saveInConfig: true,
@@ -57,7 +57,7 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "AEM Author Domain",
       placeholderText: "Enter AEM Author Domain",
-      instructionText: "Enter the AEM Author domain for the authoring ennvionment you would to connect to",
+      instructionText: "Enter the AEM Author domain for the authoring ennvionment you would to connect to.",
       saveInConfig: true,
       saveInServerConfig: false,
     },
