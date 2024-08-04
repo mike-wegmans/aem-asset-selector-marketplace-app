@@ -1,0 +1,63 @@
+name: Contentstack - AEM Selector Application Deployment
+on:
+  workflow_call:
+    inputs:
+      environment_name:
+        required: true
+        type: string
+      branch:
+        required: true
+        type: string
+      deploy_application:
+        required: true
+        default: true
+        type: boolean
+    secrets:
+      VERCEL_TOKEN:
+        description: Vercel token to interact with the API
+        required: true
+      VERCEL_ORG_ID:
+        description: Vercel organization id
+        required: true
+      VERCEL_PROJECT_ID:
+        description: Vercel project id
+        required: true
+
+jobs:
+  csaem-selector-deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment_name }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: "package.json"
+
+      - name: Install Vercel CLI
+        run: |
+          npm install --global vercel@latest
+          npm install --global pnpm
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token="${{ secrets.VERCEL_TOKEN }}"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Run pnpm install
+        run: pnpm install
+
+      - name: Build Project Artifacts
+        run: vercel build --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Deploy Application to Vercel Domain
+        id: vercel_deployment
+        if: ${{ inputs.deploy_application }}
+        run: |
+          url="$(vercel deploy --prebuilt --force --token=${{ secrets.VERCEL_TOKEN }})"
+          vercel alias --token=${{ secrets.VERCEL_TOKEN }} set "$url" "${{ inputs.environment_name }}" --scope=${{ secrets.VERCEL_ORG_ID }}
