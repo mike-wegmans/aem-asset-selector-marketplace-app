@@ -1,6 +1,6 @@
 /* Import React modules */
 import React, { Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 /* Import other node modules */
 /* Import our modules */
 import ErrorBoundary from "../../components/ErrorBoundary";
@@ -23,7 +23,7 @@ const App: React.FC = function () {
   return (
     <div className="app">
       <ErrorBoundary>
-        <BrowserRouter>
+        <HashRouter>
           {/* If the path is changed here,
               be sure to update the path for corresponding UI location
               in Update App API */
@@ -62,7 +62,7 @@ const App: React.FC = function () {
               />
             </Routes>
           </MarketplaceAppProvider>
-        </BrowserRouter>
+        </HashRouter>
       </ErrorBoundary>
     </div>
   );

@@ -74,7 +74,7 @@ export const onClickHandler = async (props) => {
     if (rteConfig?.damEnv?.DIRECT_SELECTOR_PAGE === "url") {
       url = rteConfig?.getSelectorWindowUrl?.(config);
     } else {
-      url = `${process.env.REACT_APP_UI_URL}/#/selector-page?location=${queryLocation}`;
+      url = `${process.env.REACT_APP_UI_URL}/selector-page?location=${queryLocation}`;
     }
     utils.popupWindow({
       url,

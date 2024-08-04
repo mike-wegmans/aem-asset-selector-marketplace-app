@@ -15,6 +15,11 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>AEM Asset Selector Marketplace App</title>
+    <script>
+      if (window.location.href.indexOf("#") > 0) {
+        window.location.replace("https://localhost.wegmans.com/selector-page?location=CUSTOM-FIELD");
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

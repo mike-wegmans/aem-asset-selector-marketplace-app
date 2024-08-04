@@ -130,7 +130,7 @@ const CustomField: React.FC = function () {
             type: rootConfig.damEnv.DAM_APP_NAME,
             selectedIds: selectedAssetIds,
           },
-          `${process.env.REACT_APP_CUSTOM_FIELD_URL}/#/selector-page`
+          `${process.env.REACT_APP_CUSTOM_FIELD_URL}/selector-page`
         );
       } else if (
         data?.message === "add" &&
@@ -155,7 +155,7 @@ const CustomField: React.FC = function () {
     if (state?.appSdkInitialized) {
       if (rootConfig?.damEnv?.DIRECT_SELECTOR_PAGE === "novalue") {
         CustomFieldUtils.popupWindow({
-          url: `${process.env.REACT_APP_CUSTOM_FIELD_URL}/#/selector-page?location=CUSTOM-FIELD`,
+          url: `${process.env.REACT_APP_CUSTOM_FIELD_URL}/selector-page?location=CUSTOM-FIELD`,
           title: localeTexts.SelectorPage.title,
           w: 1500,
           h: 800,

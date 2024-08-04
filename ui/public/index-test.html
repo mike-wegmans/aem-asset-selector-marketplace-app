@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Asset Selectors</title>
+
+    <script src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
+
+    <script>
+      // 2. Register the Assets Selectors Auth Service on document load
+      // Note: it is recommended that you call registerAssetsSelectorsAuthService before you call renderAssetSelectorWithAuthFlow
+      PureJSSelectors.registerAssetsSelectorsAuthService({
+        imsClientId: "aemcs-wegmans-assetselector",
+        imsScope: "AdobeID,openid,additional_info.projectedProductContext",
+        redirectUrl: window.location.href,
+        modalMode: false,
+        env: "prod",
+        onAccessTokenReceived: (imsToken) => {},
+      });
+
+      // 3. Render the AssetSelector component with built in auth flow
+      const props = {
+        imsOrg: "68B620B35350F1650A490D45@AdobeOrg",
+        repositoryId: "author-p131626-e1322420.adobeaemcloud.com",
+        handleSelection: (assets) => {
+          alert("do something cool");
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div id="asset-selector-container" style="height: 800px; width: 100%">
+      Loading Asset Selector
+    </div>
+    <script>
+      PureJSSelectors.renderAssetSelectorWithAuthFlow(
+        document.getElementById("asset-selector-container"),
+        props
+      );
+    </script>
+  </body>
+</html>

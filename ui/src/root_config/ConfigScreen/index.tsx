@@ -57,7 +57,8 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "AEM Author Domain",
       placeholderText: "Enter AEM Author Domain",
-      instructionText: "Enter the AEM Author domain for the authoring ennvionment you would to connect to.",
+      instructionText:
+        "Enter the AEM Author domain for the authoring ennvionment you would to connect to.",
       saveInConfig: true,
       saveInServerConfig: false,
     },
@@ -65,7 +66,8 @@ const configureConfigScreen = () =>
       type: "textInputFields",
       labelText: "Dynamic Media Domain",
       placeholderText: "Enter Dynamic Media Domain",
-      instructionText: "Enter the Dynamic Media Domain for the Dynamic Media environment assoicated with the AEM Author you are connecting to.",
+      instructionText:
+        "Enter the Dynamic Media Domain for the Dynamic Media environment assoicated with the AEM Author you are connecting to.",
       saveInConfig: true,
       saveInServerConfig: false,
     },
